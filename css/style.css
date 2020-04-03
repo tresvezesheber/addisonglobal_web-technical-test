@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+main {
+  padding: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 420px;
+  margin: 0px auto;
+}
+
+.nav__button {
+  flex: 1;
+  padding: 6px;
+  text-align: center;
+  border: 1px solid #47525e;
+  border-right: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.nav__button + .nav__button {
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.nav__button--active {
+  background: #47525e;
+  color: #ffffff;
+}
+
+.card {
+  max-width: 400px;
+  margin: 20px auto;
+  background: #f2f2f2;
+}
+
+.card__cover {
+  max-width: 100%;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.card__title {
+  margin-bottom: 10px;
+  color: #4b5562;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.card__desc {
+  margin-bottom: 8px;
+  padding: 0 10px;
+  color: #4b5562;
+}
+
+.card__buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 8px 2px;
+  color: #47525e;
+  font-size: 14px;
+  text-align: center;
+  border: 1px solid #47525e;
+  border-radius: 8px;
+}
+
+.card__button--flat {
+  background: #47525e;
+  color: #ffffff;
+}
