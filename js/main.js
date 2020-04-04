@@ -4,29 +4,32 @@ axios
         console.log(response);
 
         var promos = response.data
-        var promosList = document.querySelector(".cards__container")
-        var card = document.querySelector(".card")
-
-        for (item of promos) {
-            var cardClone = card.cloneNode(true)
-            promosList.appendChild(cardClone)
-        }
-        card.remove()
-
-        var cardTitle = document.querySelectorAll(".card__title")
-        console.log(cardTitle)
-        var count = 0
         
-        for (item of promos) {
-
-            var dataTitle = item.name
-            // console.log(dataTitle)
-            cardTitle[count].textContent = dataTitle
-            console.log(item)
-
-            count++
-        }
+        createCards(promos)
+        insertDataInCards(promos)
     })
     .catch(function (error) {
         console.warn(error);
     });
+
+function createCards(promos) {
+    var promosList = document.querySelector(".cards__container")
+    var card = document.querySelector(".card")
+
+    for (item of promos) {
+        var cardClone = card.cloneNode(true)
+        promosList.appendChild(cardClone)
+    }
+    card.remove()
+}
+
+function insertDataInCards(promos) {
+    var cardTitle = document.querySelectorAll(".card__title")
+    var count = 0
+
+    for (item of promos) {
+        var dataTitle = item.name
+        cardTitle[count].textContent = dataTitle
+        count++
+    }
+}
