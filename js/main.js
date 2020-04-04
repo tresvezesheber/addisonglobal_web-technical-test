@@ -5,36 +5,27 @@ axios
 
         var promos = response.data
         var promosList = document.querySelector(".cards__container")
+        var card = document.querySelector(".card")
 
         for (item of promos) {
-
+            var cardClone = card.cloneNode(true)
+            promosList.appendChild(cardClone)
         }
-        // var countries = response.data;
-        // var listCountries = document.querySelector("#app ul");
+        card.remove()
 
-        // for (item of countries) {
-        //   var itemCountry = document.createElement("li");
-        //   var flagCountry = document.createElement("img");
-        //   flagCountry.setAttribute("src", item.flag);
-        //   itemCountry.appendChild(flagCountry);
+        var cardTitle = document.querySelectorAll(".card__title")
+        console.log(cardTitle)
+        var count = 0
+        
+        for (item of promos) {
 
-        //   var nameCountry = document.createElement("h1");
-        //   var textName = document.createTextNode(item.name);
-        //   nameCountry.appendChild(textName);
-        //   itemCountry.appendChild(nameCountry);
+            var dataTitle = item.name
+            // console.log(dataTitle)
+            cardTitle[count].textContent = dataTitle
+            console.log(item)
 
-        //   var abbrCountry = document.createElement("span");
-        //   var textAbbr = document.createTextNode(` (${item.alpha2Code})`);
-        //   abbrCountry.appendChild(textAbbr);
-        //   nameCountry.appendChild(abbrCountry);
-
-        //   var capitalCountry = document.createElement("p");
-        //   var textCapital = document.createTextNode(item.capital);
-        //   capitalCountry.appendChild(textCapital);
-        //   itemCountry.appendChild(capitalCountry);
-
-        //   listCountries.appendChild(itemCountry);
-        // }
+            count++
+        }
     })
     .catch(function (error) {
         console.warn(error);
