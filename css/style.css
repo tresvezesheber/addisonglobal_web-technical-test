@@ -102,3 +102,8 @@ a {
   background: #47525e;
   color: #ffffff;
 }
+
+.onlyNewCustomers {
+  display: none;
+}
+
